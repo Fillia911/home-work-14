@@ -1,0 +1,22 @@
+@use '../utils' as *;
+
+.about-section {
+  .about__decoration {
+    margin-bottom: 0;
+  }
+
+  .about__columns {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    column-gap: $global-column-gap;
+  }
+
+  .about__column {
+    flex: 1;
+  }
+
+  .about__column:nth-child(2) {
+    flex: 1.5;
+  }
+}

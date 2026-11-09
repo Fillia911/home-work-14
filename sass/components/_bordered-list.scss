@@ -1,0 +1,11 @@
+@use '../utils' as *;
+
+.bordered-list {
+  border: 1px dashed oklch(from $gray l c h / 0.5);
+  border-radius: calc($border-radius / 2);
+  padding: 30px;
+
+  li:not(:last-child) {
+    margin-bottom: 5px;
+  }
+}

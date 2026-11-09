@@ -1,0 +1,33 @@
+@use '../utils' as *;
+
+form {
+
+  &>label {
+    font-size: 14px;
+    color: $accent-color;
+  }
+
+  input,
+  select,
+  textarea {
+    font-size: 16px;
+    color: $black;
+  }
+
+  input::placeholder {
+    color: $accent-color;
+  }
+
+  button {
+    outline: none;
+    border: none;
+    background-color: $accent-color;
+    font-size: 20px;
+    color: $white;
+
+    &:hover,
+    &:focus-visible {
+      background-color: royalblue;
+    }
+  }
+}

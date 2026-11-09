@@ -1,0 +1,78 @@
+@use '../utils' as *;
+
+.positioning-section {
+  .list-reset li {
+    margin: 0;
+  }
+
+  .card {
+    @extend %card-base;
+
+    padding: 30px;
+  }
+
+  .reative {
+    height: 450px;
+
+    &__item {
+      width: 150px;
+      height: 150px;
+      position: relative;
+
+      &:first-child {
+        top: 50px;
+        left: 50px;
+      }
+
+      &:nth-child(2) {
+        left: 10%;
+      }
+
+      &:nth-child(3) {
+        bottom: 50px;
+        left: 15%;
+      }
+    }
+  }
+
+  .absolute {
+    height: 450px;
+    position: relative;
+
+    &__item {
+      width: 150px;
+      height: 150px;
+      position: absolute;
+
+      &:first-child {
+        top: 50px;
+        left: 50px;
+      }
+
+      &:nth-child(2) {
+        top: calc(50% - 75px);
+        left: calc(50% - 75px);
+      }
+
+      &:nth-child(3) {
+        bottom: 50px;
+        right: 50px;
+      }
+    }
+  }
+
+  .sticky {
+    padding: 50px;
+
+    &__item {
+      position: sticky;
+      top: 25vh;
+    }
+  }
+
+  .fixed {
+    position: fixed;
+    top: 50px;
+    left: 50px;
+  }
+}

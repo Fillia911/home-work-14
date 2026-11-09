@@ -1,0 +1,445 @@
+@charset "UTF-8";
+.positioning-section .card, .menu-list a, .btn {
+  transition-property: background-color, color, outline-color;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+  background-color: #1f1e38;
+  border: 1px solid #865af5;
+  border-radius: 12px;
+}
+
+.menu-list a, .btn {
+  padding: 15px;
+  color: #999;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+}
+.menu-list a:hover, .btn:hover, .menu-list a:focus-visible, .btn:focus-visible {
+  background-color: #999;
+  color: #fff;
+}
+
+:where(a, button, input, select, textarea, [tabindex]:not([tabindex="-1"])) {
+  outline: 3px solid transparent;
+  outline-offset: 2px;
+}
+
+:where(a,
+button,
+input,
+select,
+textarea,
+[tabindex]:not([tabindex="-1"])):focus-visible {
+  outline-color: #865af5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 15px;
+  color: #fff;
+  text-align: center;
+}
+
+p,
+ol,
+ul {
+  margin-bottom: 15px;
+}
+
+:where(h1, h2, h3, h4, h5, h6, p, ul, ol, dl, blockquote):last-child {
+  margin-bottom: 0;
+}
+
+a {
+  transition-property: color, outline-color;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+  color: #999;
+}
+a:hover, a:focus-visible {
+  color: #865af5;
+}
+
+body {
+  background-color: #0d1117;
+  font-family: "Roboto", "Arial", "Helvetica", sans-serif;
+  font-size: 16px;
+  line-height: 1.2;
+  color: #999;
+}
+
+section {
+  padding-block: 50px;
+}
+section[class*="--bg"] {
+  background-color: #18202b;
+}
+
+form > label {
+  font-size: 14px;
+  color: #865af5;
+}
+form input,
+form select,
+form textarea {
+  font-size: 16px;
+  color: #0d1117;
+}
+form input::placeholder {
+  color: #865af5;
+}
+form button {
+  outline: none;
+  border: none;
+  background-color: #865af5;
+  font-size: 20px;
+  color: #fff;
+}
+form button:hover, form button:focus-visible {
+  background-color: royalblue;
+}
+
+.rows {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.list-reset {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+td,
+th {
+  border: 1px solid oklch(from #999 l c h/0.5);
+}
+
+:where(.table-01, .table-02) > *:not(thead) tr > *:nth-last-child(-n+2) {
+  text-align: right;
+}
+
+.table-01 tfoot {
+  font-weight: 700;
+}
+
+.hide-border {
+  border-bottom-color: transparent;
+}
+
+.ball-scene {
+  --_ball-size: 60px;
+  --_jump: 200px;
+  --_duration: 1s;
+  width: 200px;
+  height: 300px;
+  position: relative;
+  margin-inline: auto;
+}
+.ball-scene__ball {
+  width: var(--_ball-size);
+  height: var(--_ball-size);
+  position: absolute;
+  left: 50%;
+  bottom: 6px;
+  margin-left: calc(var(--_ball-size) / -2);
+  border-radius: 50%;
+  background-color: #1f1e38;
+  border: 1px solid #865af5;
+  transform-origin: 50% 100%;
+  z-index: 1;
+  animation: ball-jump var(--_duration) infinite, ball-squash var(--_duration) infinite;
+}
+.ball-scene__shadow {
+  width: var(--_ball-size);
+  height: 12px;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  margin-left: calc(var(--_ball-size) / -2);
+  border-radius: 50%;
+  background-color: #000;
+  animation: ball-shadow var(--_duration) infinite;
+}
+
+@keyframes ball-jump {
+  0%, 100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 calc(var(--_jump) * -1);
+  }
+}
+@keyframes ball-squash {
+  0%, 100% {
+    scale: 1.3 0.7;
+  }
+  10%, 90% {
+    scale: 0.9 1.15;
+  }
+  25%, 75% {
+    scale: 1 1;
+  }
+}
+@keyframes ball-shadow {
+  0%, 100% {
+    scale: 1;
+    opacity: 0.4;
+  }
+  50% {
+    scale: 0.5;
+    opacity: 0.1;
+  }
+}
+.bordered-list {
+  border: 1px dashed oklch(from #999 l c h/0.5);
+  border-radius: 12px;
+  padding: 30px;
+}
+.bordered-list li:not(:last-child) {
+  margin-bottom: 5px;
+}
+
+.btn-list {
+  display: flex;
+  column-gap: 15px;
+}
+.btn-list--center {
+  justify-content: center;
+}
+
+.btn {
+  display: inline-block;
+  font: 16px/20px "Roboto", "Arial", "Helvetica", sans-serif;
+}
+
+.container {
+  max-width: 1400px;
+  padding: 0 30px;
+  margin: 0 auto;
+}
+
+.decoration {
+  padding: 75px 0;
+  border-radius: 12px;
+  margin-bottom: 30px;
+}
+.decoration--image {
+  background-image: url("../images/ico-01.svg"), url("../images/bg-01.webp");
+  background-size: auto 50%, cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.decoration--gradient {
+  background: linear-gradient(135deg, #24183d 0%, #3b2863 35%, #5a4190 70%, #865af5 100%);
+}
+
+.menu-list {
+  min-height: 150px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  column-gap: 15px;
+}
+.menu-list li {
+  padding: 5px;
+  margin: 0;
+  border: 1px dashed #999;
+  border-radius: 12px;
+}
+.menu-list li:nth-child(2), .menu-list li:nth-child(6) {
+  align-self: center;
+}
+.menu-list li:nth-child(3), .menu-list li:nth-child(5) {
+  align-self: flex-end;
+}
+.menu-list li:nth-child(4) {
+  align-self: stretch;
+}
+.menu-list a {
+  transition-property: background-color, color, outline-color;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+  display: block;
+}
+
+.hero-section .hero__container {
+  align-items: center;
+}
+.hero-section .hero__container > * {
+  margin: 0;
+}
+.hero-section .hero__photo {
+  border: 4px solid #865af5;
+  border-radius: 24px;
+  order: 2;
+}
+.hero-section .hero__title {
+  order: 1;
+}
+.hero-section .hero__copy {
+  order: 3;
+}
+
+.about-section .about__decoration {
+  margin-bottom: 0;
+}
+.about-section .about__columns {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  column-gap: 15px;
+}
+.about-section .about__column {
+  flex: 1;
+}
+.about-section .about__column:nth-child(2) {
+  flex: 1.5;
+}
+
+.positioning-section .list-reset li {
+  margin: 0;
+}
+.positioning-section .card {
+  padding: 30px;
+}
+.positioning-section .reative {
+  height: 450px;
+}
+.positioning-section .reative__item {
+  width: 150px;
+  height: 150px;
+  position: relative;
+}
+.positioning-section .reative__item:first-child {
+  top: 50px;
+  left: 50px;
+}
+.positioning-section .reative__item:nth-child(2) {
+  left: 10%;
+}
+.positioning-section .reative__item:nth-child(3) {
+  bottom: 50px;
+  left: 15%;
+}
+.positioning-section .absolute {
+  height: 450px;
+  position: relative;
+}
+.positioning-section .absolute__item {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+}
+.positioning-section .absolute__item:first-child {
+  top: 50px;
+  left: 50px;
+}
+.positioning-section .absolute__item:nth-child(2) {
+  top: calc(50% - 75px);
+  left: calc(50% - 75px);
+}
+.positioning-section .absolute__item:nth-child(3) {
+  bottom: 50px;
+  right: 50px;
+}
+.positioning-section .sticky {
+  padding: 50px;
+}
+.positioning-section .sticky__item {
+  position: sticky;
+  top: 25vh;
+}
+.positioning-section .fixed {
+  position: fixed;
+  top: 50px;
+  left: 50px;
+}
+
+.showcase-section .showcase__heading::before {
+  content: "+++";
+  color: gold;
+  margin: 0 15px;
+}
+.showcase-section .showcase__heading::after {
+  content: "+++";
+  color: hotpink;
+  margin: 0 15px;
+}
+.showcase-section .showcase-list ul {
+  border: none;
+}
+.showcase-section .showcase-list li:not(:last-child) {
+  margin-bottom: 10px;
+}
+.showcase-section .showcase-list > li:nth-child(even) {
+  color: darkorange;
+}
+.showcase-section .showcase-list > li:nth-child(odd) {
+  color: deepskyblue;
+}
+.showcase-section .showcase-list > li:first-child {
+  color: tomato;
+}
+.showcase-section .showcase-list > li:nth-child(3) {
+  color: gold;
+}
+.showcase-section .showcase-list > li:nth-of-type(4) {
+  color: mediumseagreen;
+}
+.showcase-section .showcase-list > li:nth-last-of-type(2) {
+  color: royalblue;
+}
+.showcase-section .showcase-list > li:last-child {
+  color: blueviolet;
+}
+.showcase-section .showcase-list > li > ul {
+  color: #999;
+}
+.showcase-section .showcase-list > li > ul > li:not(:has(a)) {
+  color: hotpink;
+}
+.showcase-section .showcase-list > li > ul > li:has(a) {
+  color: teal;
+}
+.showcase-section .showcase-list > li > ul > li:has(a[href^="https://"]) {
+  font-size: 20px;
+  color: #fff;
+  text-decoration: underline;
+}
+.showcase-section .showcase-list > li > ul > li:has(a[href^="https://"]) ~ li:nth-child(even) {
+  border: 1px dashed slategray;
+  color: slategray;
+}
+.showcase-section .showcase-list > li > ul > li:has(a[href^="https://"]) + li {
+  border: 1px dashed #fff;
+  color: #fff;
+}
+
+.contacts-list li::marker {
+  content: "►";
+}/*# sourceMappingURL=main.css.map */

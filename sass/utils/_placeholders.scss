@@ -1,0 +1,27 @@
+@use 'vars' as *;
+
+%card-base {
+  transition-property: background-color, color, outline-color;
+  transition-duration: $animation-duration;
+  transition-timing-function: $animation-timing-function;
+
+  background-color: $bg-color;
+  border: 1px solid $accent-color;
+  border-radius: calc($border-radius / 2);
+}
+
+%btn-base {
+  @extend %card-base;
+
+  padding: 15px;
+  color: $gray;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+
+  &:hover,
+  &:focus-visible {
+    background-color: $gray;
+    color: $white;
+  }
+}

@@ -1,0 +1,25 @@
+@use '../utils' as *;
+
+.hero-section {
+  .hero__container {
+    align-items: center;
+
+    & > * {
+      margin: 0;
+    }
+  }
+
+  .hero__photo {
+    border: 4px solid $accent-color;
+    border-radius: $border-radius;
+    order: 2;
+  }
+
+  .hero__title {
+    order: 1;
+  }
+
+  .hero__copy {
+    order: 3;
+  }
+}

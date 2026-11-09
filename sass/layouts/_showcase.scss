@@ -1,0 +1,86 @@
+@use '../utils' as *;
+
+.showcase-section {
+  .showcase__heading {
+    &::before {
+      content: '+++';
+      color: gold;
+      margin: 0 15px;
+    }
+
+    &::after {
+      content: '+++';
+      color: hotpink;
+      margin: 0 15px;
+    }
+  }
+
+  .showcase-list {
+    ul {
+      border: none;
+    }
+
+    li:not(:last-child) {
+      margin-bottom: 10px;
+    }
+
+    > li {
+      &:nth-child(even) {
+        color: darkorange;
+      }
+
+      &:nth-child(odd) {
+        color: deepskyblue;
+      }
+
+      &:first-child {
+        color: tomato;
+      }
+
+      &:nth-child(3) {
+        color: gold;
+      }
+
+      &:nth-of-type(4) {
+        color: mediumseagreen;
+      }
+
+      &:nth-last-of-type(2) {
+        color: royalblue;
+      }
+
+      &:last-child {
+        color: blueviolet;
+      }
+
+      > ul {
+        color: $gray;
+      }
+
+      > ul > li:not(:has(a)) {
+        color: hotpink;
+      }
+
+      > ul > li:has(a) {
+        color: teal;
+      }
+
+      > ul > li:has(a[href^='https://']) {
+        font-size: 20px;
+        color: $white;
+        text-decoration: underline;
+      }
+
+      // ====== Style with the highest specificity ======
+      > ul > li:has(a[href^='https://']) ~ li:nth-child(even) {
+        border: 1px dashed slategray;
+        color: slategray;
+      }
+
+      > ul > li:has(a[href^='https://']) + li {
+        border: 1px dashed $white;
+        color: $white;
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+@use '../utils' as *;
+
+.btn {
+  @extend %btn-base;
+
+  display: inline-block;
+  font: 16px/20px $font-sans;
+}

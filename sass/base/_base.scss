@@ -1,0 +1,80 @@
+@use '../utils' as *;
+
+:where(a, button, input, select, textarea, [tabindex]:not([tabindex='-1'])) {
+  outline: 3px solid transparent;
+  outline-offset: 2px;
+}
+
+:where(
+  a,
+  button,
+  input,
+  select,
+  textarea,
+  [tabindex]:not([tabindex='-1'])
+):focus-visible {
+  outline-color: $accent-color;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: calc($global-rows-gap / 2);
+  color: $white;
+  text-align: center;
+}
+
+p,
+ol,
+ul {
+  margin-bottom: calc($global-rows-gap / 2);
+}
+
+:where(h1, h2, h3, h4, h5, h6, p, ul, ol, dl, blockquote):last-child {
+  margin-bottom: 0;
+}
+
+a {
+  transition-property: color, outline-color;
+  transition-duration: $animation-duration;
+  transition-timing-function: $animation-timing-function;
+
+  color: $gray;
+
+  &:hover,
+  &:focus-visible {
+    color: $accent-color;
+  }
+}
+
+body {
+  background-color: $black;
+  font-family: $font-sans;
+  font-size: 16px;
+  line-height: 1.2;
+  color: $gray;
+}
+
+section {
+  padding-block: 50px;
+
+  &[class*='--bg'] {
+    background-color: #18202b;
+  }
+}

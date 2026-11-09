@@ -1,0 +1,26 @@
+@use '../utils' as *;
+
+.decoration {
+  padding: 75px 0;
+  border-radius: calc($border-radius / 2);
+  margin-bottom: $global-rows-gap;
+
+  &--image {
+    background-image: url('../images/ico-01.svg'), url('../images/bg-01.webp');
+    background-size:
+      auto 50%,
+      cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  &--gradient {
+    background: linear-gradient(
+      135deg,
+      #24183d 0%,
+      #3b2863 35%,
+      #5a4190 70%,
+      #865af5 100%
+    );
+  }
+}
