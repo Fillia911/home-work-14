@@ -11,8 +11,8 @@
   margin-inline: auto;
 
   &__ball {
-    width: var(--_ball-size);
-    height: var(--_ball-size);
+    @include size(var(--_ball-size));
+
     position: absolute;
     left: 50%;
     bottom: 6px;

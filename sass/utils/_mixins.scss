@@ -1,0 +1,12 @@
+@use 'vars' as *;
+
+@mixin transition($props...) {
+  transition-property: $props;
+  transition-duration: $animation-duration;
+  transition-timing-function: $animation-timing-function;
+}
+
+@mixin size($w, $h: $w) {
+  width: $w;
+  height: $h;
+}

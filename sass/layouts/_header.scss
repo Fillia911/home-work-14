@@ -29,10 +29,7 @@
   }
 
   a {
-    transition-property: background-color, color, outline-color;
-    transition-duration: $animation-duration;
-    transition-timing-function: $animation-timing-function;
-
+    @include transition(background-color, color, outline-color);
     @extend %btn-base;
 
     display: block;

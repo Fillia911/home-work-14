@@ -15,8 +15,8 @@
     height: 450px;
 
     &__item {
-      width: 150px;
-      height: 150px;
+      @include size(150px);
+      
       position: relative;
 
       &:first-child {
@@ -40,8 +40,8 @@
     position: relative;
 
     &__item {
-      width: 150px;
-      height: 150px;
+      @include size(150px);
+      
       position: absolute;
 
       &:first-child {

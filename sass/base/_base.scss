@@ -51,9 +51,7 @@ ul {
 }
 
 a {
-  transition-property: color, outline-color;
-  transition-duration: $animation-duration;
-  transition-timing-function: $animation-timing-function;
+  @include transition(color, outline-color);
 
   color: $gray;
 
